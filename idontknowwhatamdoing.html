@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>i dont know what am doing.</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        img {
+            /* width: 100%; */
+            height: 90vh;
+        }
+
+        body {
+            display: flex;
+            justify-content: space-between;
+            overflow: hidden;
+            align-items: center;
+            background-image: url(assets/spacebg.gif);
+            padding: 20px;
+        }
+
+        p {
+            font-size: 150px;
+            padding: 50px;
+            text-align: center;
+            color: white;
+        }
+
+        a {
+            font-size: 20px;
+            text-wrap: nowrap;
+            color: darkorange;
+        }
+
+        @media (max-width: 1200px) {
+            body {
+                flex-direction: column;
+            }
+
+            img {
+                width: 100%;
+            }
+
+            p {
+                position: absolute;
+                /* word-break: break-all; */
+                font-size: 60px;
+                bottom: 10%;
+            }
+        }
+
+        .text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="assets/idontknow.gif">
+    <div class="text">
+        <p>sometimes this is all i want. </p>
+        <a href="/">go back</a>
+    </div>
+    <audio src="assets/I Don't Know What I'm Doing.mp3" autoplay></audio>
+</body>
+
+</html>

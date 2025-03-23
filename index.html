@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>icodeweb</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            font-family: monospace;
+            overflow: hidden;
+        }
+
+        .text {
+            position: fixed;
+            font-size: 40px;
+            padding: 40px;
+            z-index: 10000;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        #oldMe,
+        #oldMefiltered {
+            position: absolute;
+        }
+
+        #oldMe {
+            top: -50%;
+        }
+
+        #oldMefiltered {
+            /* filter: opacity();
+            filter: hue-rotate(0deg);
+            filter: invert(.3); */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #nowMe {
+            position: absolute;
+            width: 15%;
+            top: 73%;
+            left: 74%;
+        }
+
+
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+
+
+        #Innerconsole {
+            position: absolute;
+            bottom: 0px;
+            color: white;
+            pointer-events: none;
+            font-size: 40px;
+            padding: 40px;
+        }
+
+        button {
+            padding-inline: 10px;
+        }
+
+        @media (max-width: 1200px) {
+            .text {
+                color: white;
+                background-image: url(assets/spacebg.gif);
+                position: fixed;
+                bottom: 0px;
+                font-size: 40px;
+                padding: 40px;
+                z-index: 10000;
+            }
+
+            #oldMe,
+            #oldMefiltered {
+                height: 100vw;
+                width: auto;
+            }
+
+            #nowMe {
+                position: absolute;
+                width: 30%;
+                top: 45%;
+                left: 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img id="oldMe" src="assets/nowme.jpg">
+        <img id="oldMefiltered" src="assets/oldme.jpg">
+        <div class="text">
+            <p>hi, i am <b><i>ibrahim</i></b> and sometimes <a href="https://github.com/icodeweb">icodeweb</a>.</p>
+            <p>sometimes i do <a href="https://icodeweb.github.io/layers/">other Stuff</a>.</p>
+            <p>but most of the time <a href="idontknowwhatamdoing.html">i dont know what am doing.</a></p>
+            <a id="ig" href="https://www.instagram.com/i.ismail98"> <img id="nowMe" src="assets/nowme.jpg"></a>
+
+            <!-- <button>stop this</button> -->
+        </div>
+        <p id="Innerconsole"> i will be back and redo this the way that would get me a job if there is a way.</p>
+
+    </div>
+    <script>
+        let oldMefiltered = document.getElementById("oldMefiltered");
+        let Innerconsole = document.getElementById("Innerconsole")
+        setInterval(() => {
+            oldMefiltered.style.filter = `opacity(${Math.random()}) invert(${Math.random()}) hue-rotate(${(Math.random() * 360)}deg) saturate(${Math.random() * 10})`;
+            Innerconsole.innerText = `${oldMefiltered.style.filter}`
+        }, 100)
+        document.querySelector("button").addEventListener("click", () => {
+            document.querySelector("button").innerText = "no"
+        })
+    </script>
+</body>
+
+</html>
